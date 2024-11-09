@@ -8,12 +8,12 @@ import 'swiper/css/pagination';
 // Sample job data
 const jobData = [
   {
-    title: "web Developer",
+    title: "Web Developer",
     company: "Invision",
     location: "India, Balaghat",
     connections: 18,
     posted: "3 Days ago",
-    logo: "https://connectshiksha.netlify.app/assets/images/logo/01.png", // Ensure this path is valid or replace with an imported image
+    logo: "https://connectshiksha.netlify.app/assets/images/logo/01.png",
   },
   {
     title: ".NET Developer",
@@ -21,15 +21,15 @@ const jobData = [
     location: "India, Pune",
     connections: 18,
     posted: "3 Days ago",
-    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgpEB0pwwB8BKgqs5msjHFdboMiy8LCFKKlQ&usqp=CAU", // Ensure this path is valid or replace with an imported image
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgpEB0pwwB8BKgqs5msjHFdboMiy8LCFKKlQ&usqp=CAU",
   },
   {
-    title: " Ruby Developer",
+    title: "Ruby Developer",
     company: "Envato",
-    location: "India, Bangloare",
+    location: "India, Bangalore",
     connections: 18,
     posted: "2 Days ago",
-    logo: "https://media.licdn.com/dms/image/v2/D4E0BAQHVUb8KeHv_-A/company-logo_100_100/company-logo_100_100/0/1709249414071/opentable_logo?e=1739404800&v=beta&t=XANaFUXhVIQGEVyEHL3_SpyXy6ap4LuVDY-9LjPpg5I", // Ensure this path is valid or replace with an imported image
+    logo: "https://media.licdn.com/dms/image/v2/D4E0BAQHVUb8KeHv_-A/company-logo_100_100/company-logo_100_100/0/1709249414071/opentable_logo?e=1739404800&v=beta&t=XANaFUXhVIQGEVyEHL3_SpyXy6ap4LuVDY-9LjPpg5I",
   },
   {
     title: "UI/UX Designer",
@@ -37,20 +37,24 @@ const jobData = [
     location: "India, Punjab",
     connections: 18,
     posted: "3 Days ago",
-    logo: "https://media.licdn.com/dms/image/v2/D560BAQFMNl9QNxOCIw/company-logo_100_100/company-logo_100_100/0/1680386034454/kreativstorm_logo?e=1739404800&v=beta&t=ABBnt1uIWFI7B9CiADKFieakr3G5ngpKF0zSplYVz28", // Ensure this path is valid or replace with an imported image
+    logo: "https://media.licdn.com/dms/image/v2/D560BAQFMNl9QNxOCIw/company-logo_100_100/company-logo_100_100/0/1680386034454/kreativstorm_logo?e=1739404800&v=beta&t=ABBnt1uIWFI7B9CiADKFieakr3G5ngpKF0zSplYVz28",
   },
-  
-  // Add more job objects as needed
 ];
 
 const CompanySlider = () => {
   return (
-    <Swiper className='bg-gray-700 w-[43.2rem] p-7 rounded-lg'
+    <Swiper
+      className="bg-gray-700 p-4 sm:p-6 md:p-7 rounded-lg"
       spaceBetween={20}
-      slidesPerView={3}
+      slidesPerView={1} // Default for mobile
+      breakpoints={{
+        640: { slidesPerView: 1 }, // For small devices
+        768: { slidesPerView: 2 }, // For tablets
+        1024: { slidesPerView: 3 }, // For desktops
+      }}
       navigation
       pagination={{ clickable: true }}
-      modules={[Navigation, Pagination]} // Add the modules to the Swiper component
+      modules={[Navigation, Pagination]}
     >
       {jobData.map((job, index) => (
         <SwiperSlide key={index} className="p-4 bg-gray-800 rounded-lg shadow-md">

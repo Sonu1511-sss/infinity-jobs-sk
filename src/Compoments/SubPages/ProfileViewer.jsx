@@ -5,7 +5,7 @@ import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement
 // Registering chart.js components
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
-const ProfileCard = () => {
+const ProfileViewer = () => {
   // Sample data for the chart
   const chartData = {
     labels: ['5 Days Ago', '4 Days Ago', '3 Days Ago', '2 Days Ago', '1 Day Ago', 'Since Last Week'], // Time labels
@@ -63,4 +63,4 @@ const ProfileCard = () => {
   );
 };
 
-export default ProfileCard;
+export default ProfileViewer;

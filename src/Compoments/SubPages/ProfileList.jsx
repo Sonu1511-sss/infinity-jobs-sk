@@ -36,7 +36,7 @@ const ProfileList = () => {
   };
 
   return (
-    <div className="space-y-4 p-2 bg-gray-700 rounded-lg mt-4">
+    <div className="space-y-4 w-[20rem] p-2 bg-gray-700 rounded-lg mt-4 ml-4">
       {/* Headline */}
       <h2 className="text-2xl font-semibold text-center text-white mb-6">People you might know</h2>
 

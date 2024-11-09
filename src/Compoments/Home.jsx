@@ -14,29 +14,28 @@ import JobListings from './SubPages/JobListings';
 
 const HomePage = () => {
   return (
-    <div className="flex flex-wrap p-4 bg-gray-900">
+    <div className="flex flex-col md:flex-row flex-wrap p-4 bg-gray-900">
       {/* Left Sidebar */}
-      <aside className="w-1/4 p-2">
-        <ProfileCart/>
-        <ProfileViewer/>
-        <JobCard/>
+      <aside className="w-full md:w-1/4 p-2 mb-4 md:mb-0">
+        <ProfileCart />
+        <ProfileViewer />
+        <JobCard />
       </aside>
 
       {/* Main Content */}
-      <main className="w-2/4 p-2">
+      <main className="w-full md:w-2/4 p-2 mb-4 md:mb-0">
         <PostCreator />
         <PostList />
-        <CompanySlider/>
-        <PostCreatorImg/>
+        <CompanySlider />
+        <PostCreatorImg />
       </main>
 
       {/* Right Sidebar */}
-      <aside className="w-1/4 p-2">
-        <ProfileList/>
-        <GalleryCard/>
-        <JobCard2/>
-        <JobListings/>
-      
+      <aside className="w-full md:w-1/4 p-2">
+        <ProfileList />
+        <GalleryCard />
+        <JobCard2 />
+        <JobListings />
       </aside>
 
       {/* Notification Toaster */}
@@ -46,3 +45,4 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
