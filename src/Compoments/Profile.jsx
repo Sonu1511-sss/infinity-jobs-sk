@@ -6,6 +6,8 @@ import JobCard2 from './SubPages/JobCard2'
 import ProfileList from './SubPages/ProfileList'
 import JobListings from './SubPages/JobListings'
 import AboutYou from './SubPages/AboutYou'
+import Experence from './SubPages/Experence'
+import Education from './SubPages/Education'
 
 function Profile() {
   return (
@@ -21,6 +23,8 @@ function Profile() {
       {/* Main Content */}
       <main className="w-full md:w-2/4 p-2 mb-4 md:mb-0">
        <AboutYou/>
+       <Experence/>
+       <Education/>
       </main>
 
       {/* Right Sidebar */}

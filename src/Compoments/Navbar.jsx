@@ -26,11 +26,7 @@ const Navbar = () => {
     { label: "Jobs", icon: <FaBriefcase />, href: "/jobs" },
     { label: "Profile", icon: <FaUserCircle />, href: "/profile" },
     { label: "Connection", icon: <FaUserFriends />, href: "/connection" },
-    {
-      label: "Company Profile",
-      icon: <FaBuilding />,
-      href: "/company-profile",
-    },
+    { label: "Company Profile", icon: <FaBuilding />, href: "/company-profile" },
     { label: "Job Profile", icon: <FaFileAlt />, href: "/job-profile" },
     { label: "Messages", icon: <FaEnvelope />, href: "/messages" },
     { label: "Notifications", icon: <FaBell />, href: "/notifications" },
@@ -81,6 +77,11 @@ const Navbar = () => {
           </button>
         </div>
 
+        {/* Brand Name */}
+        <div className="hidden md:block">
+          <h2 className="text-2xl font-bold text-blue-500">Infinity-jobs</h2>
+        </div>
+
         {/* Menu Items */}
         <div
           className={`flex-col md:flex-row md:flex items-center space-x-6 ${
@@ -88,19 +89,10 @@ const Navbar = () => {
           } md:flex`}
         >
           <div className="flex items-center space-x-4">
-            <FaBriefcase className="text-xl cursor-pointer" title="Jobs" />{" "}
-            <span>
-              {" "}
-              <a href="/jobs">Jobs</a>
-            </span>
-            <FaUserFriends
-              className="text-xl cursor-pointer"
-              title="Connections"
-            />
-            <span>
-              {" "}
-              <a href="/connection">Connections</a>
-            </span>
+            <FaBriefcase className="text-xl cursor-pointer" title="Jobs" />
+            <span><a href="/jobs">Jobs</a></span>
+            <FaUserFriends className="text-xl cursor-pointer" title="Connections" />
+            <span><a href="/connection">Connections</a></span>
           </div>
 
           {/* Pages Dropdown */}
@@ -108,7 +100,7 @@ const Navbar = () => {
             <Menu.Button className="text-gray-300 font-semibold hover:text-white text-sm px-2 py-1 bg-gray-800 rounded-md hover:bg-gray-700 transition-all duration-300">
               Pages
             </Menu.Button>
-            <Menu.Items className="absolute right-0 mt-1 w-56 bg-gray-800 shadow-lg rounded-md py-1">
+            <Menu.Items className="absolute right-0 mt-1 w-56 bg-gray-800 shadow-lg rounded-md py-1 z-50">
               {menuItems.map((item, index) => (
                 <Menu.Item key={index}>
                   {({ active }) => (
@@ -133,10 +125,7 @@ const Navbar = () => {
 
           {/* Profile Image */}
           <div className="w-8 h-8 rounded-full bg-gray-600 cursor-pointer">
-            <a
-              href="/profile
-           "
-            >
+            <a href="/profile">
               <img
                 className="w-8 h-8 rounded-full"
                 src="./assids/shubha.jpeg"
