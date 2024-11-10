@@ -39,7 +39,7 @@ const PostList = () => {
         }}
       />
       {posts.map((post) => (
-        <div key={post.id} className="bg-gray-700 p-3 sm:p-4 mb-4 rounded-lg shadow-md flex flex-col sm:flex-row">
+        <div key={post.id} className="bg-gray-800 p-3 sm:p-4 mb-4 rounded-lg shadow-md flex flex-col sm:flex-row">
           {/* Profile section */}
           <div className="flex items-start mb-3 sm:mb-0 sm:mr-4">
             <div className="relative">

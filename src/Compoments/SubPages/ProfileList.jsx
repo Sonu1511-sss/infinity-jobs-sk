@@ -6,11 +6,11 @@ import toast, { Toaster } from 'react-hot-toast';
 const ProfileList = () => {
   // Array of persons (maximum 5)
   const people = [
-    { name: 'Shubham', image: './assids/shubha.jpeg', work: 'Software Engineer' },
-    { name: 'Dharam', image: './assids/dharam.jpeg', work: 'Product Manager' },
-    { name: 'Nikhil', image: './assids/nilkhil.jpeg', work: 'UX Designer' },
-    { name: 'Sanjay', image: './assids/samjay.jpeg', work: 'Data Scientist' },
-    { name: 'Charlie White', image: './assids/shubha.jpeg', work: 'Front-End Developer' },
+    { name: 'Nithesh Kumar', image: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=600', work: 'Software Engineer' },
+    { name: 'Harsh chandela', image: 'https://images.pexels.com/photos/874158/pexels-photo-874158.jpeg?auto=compress&cs=tinysrgb&w=600', work: 'Product Manager' },
+    { name: 'bhisma shnai', image: 'https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=600', work: 'UX Designer' },
+    { name: 'Sanjay kumar', image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600', work: 'Data Scientist' },
+    { name: 'Charlie White', image: 'https://images.pexels.com/photos/1674752/pexels-photo-1674752.jpeg?auto=compress&cs=tinysrgb&w=600', work: 'Front-End Developer' },
   ];
 
   // State to track connection requests sent
@@ -36,7 +36,7 @@ const ProfileList = () => {
   };
 
   return (
-    <div className="space-y-4 w-[20rem] p-2 bg-gray-700 rounded-lg mt-4 ml-4">
+    <div className="space-y-4 w-[20rem] p-2 bg-gray-800 rounded-lg mt-4 ml-4">
       {/* Headline */}
       <h2 className="text-2xl font-semibold text-center text-white mb-6">People you might know</h2>
 

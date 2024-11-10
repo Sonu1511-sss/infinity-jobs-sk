@@ -9,7 +9,6 @@ import Contact from './Contact';
 import EditProfile from './EditProfile';
 import FAQ from './FAQ';
 import Job from './Job';
-import JobProfile from './JobProfile';
 import Maintence from './Maintence';
 import Messages from './Messages';
 import Notification from './Notification';
@@ -31,8 +30,7 @@ function AppRoutes() {
         <Route path="/jobs" element={<Job />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/connection" element={<Connection />} />
-        <Route path="/company-profile" element={<CompanyProfile />} />
-        <Route path="/job-profile" element={<JobProfile />} />
+        <Route path="/company/:companyName" element={<CompanyProfile />} />
         <Route path="/messages" element={<Messages />} />
         <Route path="/notification" element={<Notification />} />
         <Route path="/blog" element={<Blog />} />

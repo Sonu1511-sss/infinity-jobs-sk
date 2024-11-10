@@ -1,11 +1,11 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
+import { Link } from 'react-router-dom';  // Import Link from react-router-dom
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-// Sample job data
 const jobData = [
   {
     title: "Web Developer",
@@ -44,7 +44,7 @@ const jobData = [
 const CompanySlider = () => {
   return (
     <Swiper
-      className="bg-gray-700 p-4 sm:p-6 md:p-7 rounded-lg"
+      className="bg-gray-800 p-4 sm:p-6 md:p-7 rounded-lg"
       spaceBetween={20}
       slidesPerView={1} // Default for mobile
       breakpoints={{
@@ -60,7 +60,11 @@ const CompanySlider = () => {
         <SwiperSlide key={index} className="p-4 bg-gray-800 rounded-lg shadow-md">
           <div className="text-white">
             <div className="flex justify-between items-center mb-2">
-              <h3 className="text-lg font-bold">{job.title}</h3>
+              <h3 className="text-lg font-bold">
+                <Link to={job.companyProfileLink} className="text-blue-400 hover:underline">
+                  {job.title}
+                </Link>
+              </h3>
               <img src={job.logo} alt={`${job.company} logo`} className="h-6 w-6" />
             </div>
             <p className="text-sm text-blue-400">{job.company}</p>

@@ -1,113 +1,125 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const jobData = [
-    {
-      title: "Web Developer",
-      company: "Invision",
-      location: "India, Chennai",
-      connections: 19,
-      posted: "3 Days ago",
-      logo: "https://media.licdn.com/dms/image/v2/D4D0BAQGotxw-I70YMQ/company-logo_100_100/company-logo_100_100/0/1683617270350/abhyazlearning_logo?e=1739404800&v=beta&t=qwqscMzrvvXDjIeyb2RNaqWhByZGTSFf7LICeDO1150",
-      rating: 4.5,
-      openJobsLink: "https://www.invision.com/careers",
-      category: "Web Development",
-      type: "Full-time",
-    },
-    {
-      title: "React Developer",
-      company: "Infraveo Technologies",
-      location: "India, Mumbai",
-      connections: 18,
-      posted: "3 Days ago",
-      logo: "https://media.licdn.com/dms/image/v2/D4D0BAQFUeDU-PsXePg/company-logo_100_100/company-logo_100_100/0/1690960464200?e=1739404800&v=beta&t=zm0IQCZrtP5HehrlziqiAa5_sk5hO4iy47xARnuhBn0",
-      rating: 3.5,
-      openJobsLink: "https://www.invision.com/careers",
-      category: "Web Development",
-      type: "Part-time",
-    },
-    {
-      title: "React Native",
-      company: "Zopsoft Technology Private Limited",
-      location: "India, Pune",
-      connections: 18,
-      posted: "3 Days ago",
-      logo: "https://media.licdn.com/dms/image/v2/D4D0BAQE7Zf1-vvfbUA/company-logo_100_100/company-logo_100_100/0/1692876768583/infosys_logo?e=1739404800&v=beta&t=vXgQ0tNWTGWucUSF5urV7-ARRtk2kU2ILC5EO5r2Wis",
-      rating: 4.5,
-      openJobsLink: "https://www.invision.com/careers",
-      category: "Web Development",
-      type: "Full-time",
-    },
-    {
-      title: "UI/UX Designer",
-      company: "Finding Candidate",
-      location: "India, Ujjian",
-      connections: 18,
-      posted: "3 Days ago",
-      logo: "https://media.licdn.com/dms/image/v2/C510BAQHDfAnWj7iyfQ/company-logo_100_100/company-logo_100_100/0/1630595356509/mervan_agency_logo?e=1739404800&v=beta&t=XAhM1UQX7_rh-dz_vnk_QMoZrY2M2sAGE62NEslD0aA",
-      rating: 4.5,
-      openJobsLink: "https://www.invision.com/careers",
-      category: "Designing",
-      type: "Part-time",
-    },
-    {
-      title: "UI/UX and Web Designer",
-      company: "Mervan Agency",
-      location: "India, Gujarat",
-      connections: 18,
-      posted: "3 Days ago",
-      logo: "https://media.licdn.com/dms/image/v2/D4D0BAQFBdiTYG0zSLA/company-logo_100_100/company-logo_100_100/0/1691391872716/persistent_systems_logo?e=1739404800&v=beta&t=JcgELxh2SgKQrkZUluHrkJioFpL4BGY8s79SFv-x1Qc",
-      rating: 4.5,
-      openJobsLink: "https://www.invision.com/careers",
-      category: "Designing",
-      type: "Full-time",
-    },
-    {
-      title: ".NET Developer",
-      company: "Invision",
-      location: "India, Pune",
-      connections: 20,
-      posted: "5 Days ago",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgpEB0pwwB8BKgqs5msjHFdboMiy8LCFKKlQ&usqp=CAU",
-      rating: 4.0,
-      openJobsLink: "https://www.invision.com/careers",
-      category: "Software Engineering",
-      type: "Part-time",
-    },
-    {
-      title: "Application Developer",
-      company: "Accenture in India",
-      location: "India, Hydrabad",
-      connections: 20,
-      posted: "5 Days ago",
-      logo: "https://media.licdn.com/dms/image/v2/D560BAQHbx0URQnbCKg/company-logo_100_100/company-logo_100_100/0/1719978199717/accentureindia_logo?e=1739404800&v=beta&t=lJARGMJbs0inXru-dnh3b72QtE30gs7QFeQvkwuk8mg",
-      rating: 4.0,
-      openJobsLink: "https://www.invision.com/careers",
-      category: "Software Engineering",
-      type: "Full-time",
-    },
-    {
-      title: "Developer",
-      company: "Wipro",
-      location: "India, Hyderabad",
-      connections: 20,
-      posted: "5 Days ago",
-      logo: "https://media.licdn.com/dms/image/v2/D4E0BAQEINH3Vf1swig/company-logo_100_100/company-logo_100_100/0/1730379480485/wipro_logo?e=1739404800&v=beta&t=xJoX_cetpMdOQ8XLODZstI4YBkCROdxHnAhhYUWdUCU",
-      rating: 4.0,
-      openJobsLink: "https://www.invision.com/careers",
-      category: "Software Engineering",
-      type: "Full-time",
-    },
-  ];
+  {
+    title: "Web Developer",
+    company: "Invision",
+    location: "India, Chennai",
+    connections: 19,
+    posted: "3 Days ago",
+    logo: "https://media.licdn.com/dms/image/v2/D4D0BAQGotxw-I70YMQ/company-logo_100_100/company-logo_100_100/0/1683617270350/abhyazlearning_logo?e=1739404800&v=beta&t=qwqscMzrvvXDjIeyb2RNaqWhByZGTSFf7LICeDO1150",
+    rating: 4.5,
+    openJobsLink: "https://www.invision.com/careers",
+    category: "Web Development",
+    type: "Full-time",
+  },
+  {
+    title: "React Developer",
+    company: "Infraveo Technologies",
+    location: "India, Mumbai",
+    connections: 18,
+    posted: "3 Days ago",
+    logo: "https://media.licdn.com/dms/image/v2/D4D0BAQFUeDU-PsXePg/company-logo_100_100/company-logo_100_100/0/1690960464200?e=1739404800&v=beta&t=zm0IQCZrtP5HehrlziqiAa5_sk5hO4iy47xARnuhBn0",
+    rating: 3.5,
+    openJobsLink: "https://www.invision.com/careers",
+    category: "Web Development",
+    type: "Part-time",
+  },
+  {
+    title: "React Native",
+    company: "Zopsoft Technology Private Limited",
+    location: "India, Pune",
+    connections: 18,
+    posted: "3 Days ago",
+    logo: "https://media.licdn.com/dms/image/v2/D4D0BAQE7Zf1-vvfbUA/company-logo_100_100/company-logo_100_100/0/1692876768583/infosys_logo?e=1739404800&v=beta&t=vXgQ0tNWTGWucUSF5urV7-ARRtk2kU2ILC5EO5r2Wis",
+    rating: 4.5,
+    openJobsLink: "https://www.invision.com/careers",
+    category: "Web Development",
+    type: "Full-time",
+  },
+  {
+    title: "UI/UX Designer",
+    company: "Finding Candidate",
+    location: "India, Ujjian",
+    connections: 18,
+    posted: "3 Days ago",
+    logo: "https://media.licdn.com/dms/image/v2/C510BAQHDfAnWj7iyfQ/company-logo_100_100/company-logo_100_100/0/1630595356509/mervan_agency_logo?e=1739404800&v=beta&t=XAhM1UQX7_rh-dz_vnk_QMoZrY2M2sAGE62NEslD0aA",
+    rating: 4.5,
+    openJobsLink: "https://www.invision.com/careers",
+    category: "Designing",
+    type: "Part-time",
+  },
+  {
+    title: "UI/UX and Web Designer",
+    company: "Mervan Agency",
+    location: "India, Gujarat",
+    connections: 18,
+    posted: "3 Days ago",
+    logo: "https://media.licdn.com/dms/image/v2/D4D0BAQFBdiTYG0zSLA/company-logo_100_100/company-logo_100_100/0/1691391872716/persistent_systems_logo?e=1739404800&v=beta&t=JcgELxh2SgKQrkZUluHrkJioFpL4BGY8s79SFv-x1Qc",
+    rating: 4.5,
+    openJobsLink: "https://www.invision.com/careers",
+    category: "Designing",
+    type: "Full-time",
+  },
+  {
+    title: ".NET Developer",
+    company: "Invision",
+    location: "India, Pune",
+    connections: 20,
+    posted: "5 Days ago",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgpEB0pwwB8BKgqs5msjHFdboMiy8LCFKKlQ&usqp=CAU",
+    rating: 4.0,
+    openJobsLink: "https://www.invision.com/careers",
+    category: "Software Engineering",
+    type: "Part-time",
+  },
+  {
+    title: "Application Developer",
+    company: "Accenture in India",
+    location: "India, Hydrabad",
+    connections: 20,
+    posted: "5 Days ago",
+    logo: "https://media.licdn.com/dms/image/v2/D560BAQHbx0URQnbCKg/company-logo_100_100/company-logo_100_100/0/1719978199717/accentureindia_logo?e=1739404800&v=beta&t=lJARGMJbs0inXru-dnh3b72QtE30gs7QFeQvkwuk8mg",
+    rating: 4.0,
+    openJobsLink: "https://www.invision.com/careers",
+    category: "Software Engineering",
+    type: "Full-time",
+  },
+  {
+    title: "Developer",
+    company: "Wipro",
+    location: "India, Hyderabad",
+    connections: 20,
+    posted: "5 Days ago",
+    logo: "https://media.licdn.com/dms/image/v2/D4E0BAQEINH3Vf1swig/company-logo_100_100/company-logo_100_100/0/1730379480485/wipro_logo?e=1739404800&v=beta&t=xJoX_cetpMdOQ8XLODZstI4YBkCROdxHnAhhYUWdUCU",
+    rating: 4.0,
+    openJobsLink: "https://www.invision.com/careers",
+    category: "Software Engineering",
+    type: "Full-time",
+  },
+];
 
 const CompanyCard = ({ job }) => {
+  const navigate = useNavigate();
+
+  const handleTitleClick = () => {
+    navigate(`/company/:companyName${job.company}`); // Navigates to the company's profile page
+  };
+
   return (
-    <div className="bg-gray-700 text-white p-6 rounded-md shadow-lg">
+    <div className="bg-gray-800 text-white p-6 rounded-md shadow-lg">
       <img
         src={job.logo}
         alt={job.company}
         className="w-16 h-16 rounded-full mb-4 mx-auto"
       />
-      <h3 className="text-xl font-semibold">{job.title}</h3>
+      <h3
+        className="text-xl font-semibold cursor-pointer"
+        onClick={handleTitleClick}
+      >
+        {job.title}
+      </h3>
       <p className="text-sm">{job.company}</p>
       <p className="text-sm">{job.location}</p>
       <div className="mt-4">
@@ -149,65 +161,44 @@ const AllJobs = () => {
   const filteredJobs = jobData.filter((job) => {
     const matchesSearch = job.title.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesType = selectedType === "All" || job.type === selectedType;
-    
     return matchesSearch && matchesType;
   });
 
-  // Remove duplicates based on title and company (ensures each job appears only once)
-  const uniqueJobs = [
-    ...new Map(filteredJobs.map((job) => [`${job.title}-${job.company}`, job])).values(),
-  ];
-
   return (
-    <div className="p-6 bg-gray-800 min-h-screen">
-      {/* Search Bar */}
-      <div className="mb-6">
+    <div className="container mx-auto p-6">
+      <div className="mb-4 flex-col  justify-between">
         <input
           type="text"
-          placeholder="Search for jobs..."
+          placeholder="Search jobs"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full p-3 rounded-md bg-gray-700 border-2 border-gray-500 focus:outline-none"
+          className="p-2 w-full border bg-gray-800  text-white rounded-md"
         />
+        <div className="flex items-center mt-2 text-white space-x-4">
+          <button
+            onClick={() => setSelectedType("All")}
+            className={`p-2 border rounded-md ${selectedType === "All" ? "bg-blue-500 text-white" : ""}`}
+          >
+            All
+          </button>
+          <button
+            onClick={() => setSelectedType("Full-time")}
+            className={`p-2 border rounded-md ${selectedType === "Full-time" ? "bg-blue-500 text-white" : ""}`}
+          >
+            Full-time
+          </button>
+          <button
+            onClick={() => setSelectedType("Part-time")}
+            className={`p-2 border rounded-md ${selectedType === "Part-time" ? "bg-blue-500 text-white" : ""}`}
+          >
+            Part-time
+          </button>
+        </div>
       </div>
-
-      {/* Filter Tabs */}
-      <div className="flex space-x-4 mb-6">
-        <button
-          onClick={() => setSelectedType("All")}
-          className={`p-2 text-white ${
-            selectedType === "All" ? "bg-gray-600" : "bg-gray-700"
-          } rounded-md`}
-        >
-          All Jobs
-        </button>
-        <button
-          onClick={() => setSelectedType("Full-time")}
-          className={`p-2 text-white ${
-            selectedType === "Full-time" ? "bg-gray-600" : "bg-gray-700"
-          } rounded-md`}
-        >
-          Full-time
-        </button>
-        <button
-          onClick={() => setSelectedType("Part-time")}
-          className={`p-2 text-white ${
-            selectedType === "Part-time" ? "bg-gray-600" : "bg-gray-700"
-          } rounded-md`}
-        >
-          Part-time
-        </button>
-      </div>
-
-      {/* Job Cards */}
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {uniqueJobs.length > 0 ? (
-          uniqueJobs.map((job, index) => (
-            <CompanyCard key={index} job={job} />
-          ))
-        ) : (
-          <p className="text-white">No jobs found.</p>
-        )}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filteredJobs.map((job, index) => (
+          <CompanyCard key={index} job={job} />
+        ))}
       </div>
     </div>
   );

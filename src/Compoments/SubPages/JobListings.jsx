@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // Sample job data for two companies
 const jobData = [
@@ -8,7 +9,7 @@ const jobData = [
     location: "India, Balaghat",
     connections: 18,
     posted: "3 Days ago",
-    logo: "https://connectshiksha.netlify.app/assets/images/logo/01.png", // Ensure this path is valid or replace with an imported image
+    logo: "https://connectshiksha.netlify.app/assets/images/logo/01.png",
   },
   {
     title: ".NET Developer",
@@ -16,16 +17,18 @@ const jobData = [
     location: "India, Pune",
     connections: 20,
     posted: "5 Days ago",
-    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgpEB0pwwB8BKgqs5msjHFdboMiy8LCFKKlQ&usqp=CAU", // Ensure this path is valid or replace with an imported image
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgpEB0pwwB8BKgqs5msjHFdboMiy8LCFKKlQ&usqp=CAU",
   }
 ];
 
 const JobCard = ({ job }) => {
   return (
-    <div className="bg-gray-700 p-6 rounded-lg shadow-md mb-6 w-[20rem] mt-5 ml-4">
+    <div className="bg-gray-800 p-6 rounded-lg shadow-md mb-6 w-[20rem] mt-5 ml-4">
       <div className="flex justify-between items-center mb-4">
         {/* Job Title and Company */}
-        <h3 className="text-lg font-semibold text-white">{job.title}</h3>
+        <Link to={`/company/${job.company}`} className="text-lg font-semibold text-white">
+          {job.title}
+        </Link>
         <img src={job.logo} alt={`${job.company} logo`} className="h-8 w-8" />
       </div>
 
@@ -52,11 +55,13 @@ const JobCard = ({ job }) => {
 
 const JobListings = () => {
   return (
-    <div>
-      {/* Job Card 1 */}
-      <JobCard job={jobData[0]} />
-      {/* Job Card 2 */}
-      <JobCard job={jobData[1]} />
+    <div className="">
+      {/* Render Job Cards */}
+      {jobData.map((job, index) => (
+        <div key={index} className="w-full md:w-1/2 lg:w-1/3">
+          <JobCard job={job} />
+        </div>
+      ))}
     </div>
   );
 };

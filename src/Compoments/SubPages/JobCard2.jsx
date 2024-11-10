@@ -7,7 +7,7 @@ const JobCard2 = ({ company }) => {
   const name = company?.name || 'Olink Premium';
   const location = company?.location || 'Grow & nurture your network';
   return (
-    <div className="max-w-sm rounded-lg bg-gray-700 shadow-lg w-[20rem] mt-5 ml-4 p-4">
+    <div className="max-w-sm rounded-lg bg-gray-800 shadow-lg w-[20rem] mt-5 ml-4 p-4">
       {/* Company Logo */}
       <div className="w-full h-48 mb-4">
         <img

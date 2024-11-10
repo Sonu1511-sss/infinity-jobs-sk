@@ -31,7 +31,7 @@ const ProfileViewer = () => {
   };
 
   return (
-    <div className="max-w-sm rounded-lg bg-gray-700 p-4 shadow-md w-[20rem] mt-5 ml-4">
+    <div className="max-w-sm rounded-lg bg-gray-800 p-4 shadow-md w-[20rem] mt-5 ml-4">
       <div className="flex items-center space-x-3">
         <div className="w-12 h-12 rounded-full bg-blue-500 flex justify-center items-center text-white">
           {/* Profile Avatar */}

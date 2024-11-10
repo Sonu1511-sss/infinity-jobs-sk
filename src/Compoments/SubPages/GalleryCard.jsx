@@ -29,7 +29,7 @@ const GalleryCard = () => {
   const displayedImages = showAll ? images : images.slice(0, 9);
 
   return (
-    <div className="space-y-4 p-4 bg-gray-700 mt-3 rounded-lg">
+    <div className="space-y-4 p-4 w-[20rem] ml-4 bg-gray-800 mt-3 rounded-lg">
       <h2 className="text-1xl font-semibold text-left text-white ">Photos</h2>
 
       {/* Gallery Grid */}

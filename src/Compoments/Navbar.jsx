@@ -26,11 +26,11 @@ const Navbar = () => {
     { label: "Jobs", icon: <FaBriefcase />, href: "/jobs" },
     { label: "Profile", icon: <FaUserCircle />, href: "/profile" },
     { label: "Connection", icon: <FaUserFriends />, href: "/connection" },
-    { label: "Company Profile", icon: <FaBuilding />, href: "/company-profile" },
+    { label: "Company Profile", icon: <FaBuilding />, href: "/company/:companyName" },
     { label: "Job Profile", icon: <FaFileAlt />, href: "/job-profile" },
     { label: "Messages", icon: <FaEnvelope />, href: "/messages" },
-    { label: "Notifications", icon: <FaBell />, href: "/notifications" },
-    { label: "404 Not Found", icon: <FaQuestionCircle />, href: "/404" },
+    { label: "Notifications", icon: <FaBell />, href: "/notification" },
+    { label: "404 Not Found", icon: <FaQuestionCircle />, href: "/*" },
     { label: "FAQ", icon: <FaQuestionCircle />, href: "/faq" },
     { label: "Terms", icon: <FaFileContract />, href: "/terms" },
     { label: "Privacy", icon: <MdOutlinePrivacyTip />, href: "/privacy" },
@@ -82,12 +82,32 @@ const Navbar = () => {
           <h2 className="text-2xl font-bold text-blue-500">Infinity-jobs</h2>
         </div>
 
+        {/* Mobile Menu */}
+        {menuOpen && (
+          <div className="absolute top-[4rem] left-0 right-0 bg-gray-800 z-50 p-4 md:hidden">
+            {menuItems.map((item, index) => (
+              <a
+                key={index}
+                href={item.href}
+                className="block text-gray-300 py-2 px-4 hover:bg-gray-700 rounded-md"
+              >
+                <div className="flex items-center">
+                  <span className="mr-2">{item.icon}</span>
+                  {item.label}
+                </div>
+              </a>
+            ))}
+            <button
+              className="mt-4 w-full py-2 bg-red-600 text-white rounded-md"
+              onClick={() => setMenuOpen(false)}
+            >
+              Close
+            </button>
+          </div>
+        )}
+
         {/* Menu Items */}
-        <div
-          className={`flex-col md:flex-row md:flex items-center space-x-6 ${
-            menuOpen ? "flex" : "hidden"
-          } md:flex`}
-        >
+        <div className={`hidden md:flex items-center space-x-6`}>
           <div className="flex items-center space-x-4">
             <FaBriefcase className="text-xl cursor-pointer" title="Jobs" />
             <span><a href="/jobs">Jobs</a></span>
@@ -128,7 +148,7 @@ const Navbar = () => {
             <a href="/profile">
               <img
                 className="w-8 h-8 rounded-full"
-                src="./assids/shubha.jpeg"
+                src="https://media.licdn.com/dms/image/v2/D4D03AQEI2Q6g0iYJ6A/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1731205970568?e=1736985600&v=beta&t=iajxgOUHtsKGnwpNe1jQyzcHOv0gJMAEM1gBWS39Rxg"
                 alt="Profile"
               />
             </a>
