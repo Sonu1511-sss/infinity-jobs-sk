@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import JobPostCard from './JobPostCard';
 
 function OverView() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -8,6 +9,8 @@ function OverView() {
   };
 
   return (
+    <div>
+
     <div className="p-6 bg-gray-800 rounded-lg mt-2 text-white">
       {/* Heading */}
       <h1 className="text-2xl font-bold mb-6">OverView</h1>
@@ -30,7 +33,41 @@ function OverView() {
       >
         {isExpanded ? 'Read Less' : 'Read More'}
       </button>
+     </div>
+     <div className="p-6 bg-gray-800 rounded-lg mt-4 text-white">
+      {/* Heading */}
+      <h1 className="text-2xl font-bold mb-6">Job Details</h1>
+
+      {/* Table */}
+      <table className="min-w-full text-left table-auto border-collapse">
+        <thead>
+          <tr className="bg-gray-800">
+            <th className="px-6 py-3 text-lg font-semibold text-gray-300">Field</th>
+            <th className="px-6 py-3 text-lg font-semibold text-gray-300">Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr className="border-t border-gray-700">
+            <td className="px-6 py-4 text-sm text-gray-400">Seniority Level</td>
+            <td className="px-6 py-4 text-sm text-white">Mid-Senior level</td>
+          </tr>
+          <tr className="border-t border-gray-700">
+            <td className="px-6 py-4 text-sm text-gray-400">Industry</td>
+            <td className="px-6 py-4 text-sm text-white">Internet Information Technology & Services</td>
+          </tr>
+          <tr className="border-t border-gray-700">
+            <td className="px-6 py-4 text-sm text-gray-400">Employment Type</td>
+            <td className="px-6 py-4 text-sm text-white">Full-time</td>
+          </tr>
+          <tr className="border-t border-gray-700">
+            <td className="px-6 py-4 text-sm text-gray-400">Job Functions</td>
+            <td className="px-6 py-4 text-sm text-white">Other</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+     <JobPostCard  className=""/>
+</div>
   );
 }
 

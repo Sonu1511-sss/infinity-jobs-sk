@@ -39,7 +39,7 @@ const ProfileCard = () => {
       {/* Links */}
       <div className="mt-4 text-center">
         <a
-          href="/profile"
+          href="/edit-profile"
           className="inline-block bg-blue-600 hover:bg-blue-700 text-white py-1 px-4 rounded-full transition-all duration-300"
         >
           View My Profile

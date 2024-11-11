@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 import GalleryCard from "./SubPages/GalleryCard";
 import JobCard from "./SubPages/JobCard";
@@ -6,11 +6,14 @@ import OverView from "./SubPages/OverView"
 import JobPostCard from "./SubPages/JobPostCard";
 import CompanyCard from "./SubPages/CompanyCard";
 import { FaBell } from "react-icons/fa";
-import ProfileViewer from "./SubPages/ProfileViewer";
 import ProfileList from "./SubPages/ProfileList";
 import JobCard2 from "./SubPages/JobCard2";
+import AllJobs from "./SubPages/AllJobs";
 
 const CompanyProfile = () => {
+  const [activeTab, setActiveTab] = useState("overview");
+  const [review, setReview] = useState("");
+
   const handleSave = () => {
     toast.success("Job Saved!");
   };
@@ -19,9 +22,19 @@ const CompanyProfile = () => {
     toast.success("Application Submitted!");
   };
 
-    const handleClick = () => {
-      toast.success('Job alert has been set!'); // This will display a success toast notification
-    };
+  const handleClick = () => {
+    toast.success("Job alert has been set!");
+  };
+
+  const handleReviewSubmit = () => {
+    if (review.trim()) {
+      toast.success("Review submitted successfully!");
+      setReview(""); // Reset the review input after submission
+    } else {
+      toast.error("Please write a review before submitting.");
+    }
+  };
+
 
   return (
     <div className="relative">
@@ -95,58 +108,67 @@ const CompanyProfile = () => {
 
     {/* Main Content */}
     <main className="w-full md:w-2/4 p-2 mb-4 md:mb-0">
-      <OverView/>
-      <div className="p-6 bg-gray-800 rounded-lg mt-4 text-white">
-      {/* Heading */}
-      <h1 className="text-2xl font-bold mb-6">Job Details</h1>
+    {/* Tab Navigation */}
+    <div className="flex justify-center mt-4 space-x-4 text-white">
+        <button
+          className={`py-2 px-4 ${activeTab === "overview" ? "bg-blue-500" : "bg-gray-700"} rounded-md`}
+          onClick={() => setActiveTab("overview")}
+        >
+          Overview
+        </button>
+        <button
+          className={`py-2 px-4 ${activeTab === "jobs" ? "bg-blue-500" : "bg-gray-700"} rounded-md`}
+          onClick={() => setActiveTab("jobs")}
+        >
+          Jobs
+        </button>
+        <button
+          className={`py-2 px-4 ${activeTab === "reviews" ? "bg-blue-500" : "bg-gray-700"} rounded-md`}
+          onClick={() => setActiveTab("reviews")}
+        >
+          Reviews
+        </button>
+      </div>
 
-      {/* Table */}
-      <table className="min-w-full text-left table-auto border-collapse">
-        <thead>
-          <tr className="bg-gray-800">
-            <th className="px-6 py-3 text-lg font-semibold text-gray-300">Field</th>
-            <th className="px-6 py-3 text-lg font-semibold text-gray-300">Details</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr className="border-t border-gray-700">
-            <td className="px-6 py-4 text-sm text-gray-400">Seniority Level</td>
-            <td className="px-6 py-4 text-sm text-white">Mid-Senior level</td>
-          </tr>
-          <tr className="border-t border-gray-700">
-            <td className="px-6 py-4 text-sm text-gray-400">Industry</td>
-            <td className="px-6 py-4 text-sm text-white">Internet Information Technology & Services</td>
-          </tr>
-          <tr className="border-t border-gray-700">
-            <td className="px-6 py-4 text-sm text-gray-400">Employment Type</td>
-            <td className="px-6 py-4 text-sm text-white">Full-time</td>
-          </tr>
-          <tr className="border-t border-gray-700">
-            <td className="px-6 py-4 text-sm text-gray-400">Job Functions</td>
-            <td className="px-6 py-4 text-sm text-white">Other</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-<JobPostCard/>
+      {/* Tab Content */}
+      <div className="mt-4">
+        {activeTab === "overview" && <OverView />}
+        {activeTab === "jobs" && <AllJobs />}
+        {activeTab === "reviews" && (
+          <div className="bg-gray-800 p-4 rounded-md">
+            <h2 className="text-2xl text-white mb-4">Submit a Review</h2>
+            <textarea
+              className="w-full p-2 rounded-md bg-gray-700 text-white"
+              placeholder="Write your review..."
+              value={review}
+              onChange={(e) => setReview(e.target.value)}
+            ></textarea>
+            <button
+              onClick={handleReviewSubmit}
+              className="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition"
+            >
+              Submit Review
+            </button>
+          </div>
+        )}
+      </div>
     </main>
 
     {/* Right Sidebar */}
     <aside className="w-full md:w-1/4 p-2">
-    <button
-      onClick={handleClick}
-      className="flex items-center space-x-2 px-11 py-2 bg-red-500 mt-4 ml-8 w-60 text-center text-white rounded hover:bg-red-600"
-    >
-    <FaBell />{/* Job icon */}
-      <span>Set Job Alert</span>
-    </button>
-    <h2 className="text-white text-2xl pt-2 pl-9 font-bold ">Similar Jobs</h2>
-     <CompanyCard/>
-     <ProfileList/>
-     <JobCard2/>
+      <JobPostCard />
+      <CompanyCard />
+      <ProfileList />
+      <JobCard2 />
+      <button
+        onClick={handleClick}
+        className="flex items-center justify-center mt-4 bg-yellow-500 text-white py-2 px-4 rounded-md hover:bg-yellow-600 transition w-full"
+      >
+        <FaBell className="mr-2" /> Set Job Alert
+      </button>
     </aside>
   </div>
-    </div>
+</div>
   );
 };
 

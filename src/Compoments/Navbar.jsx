@@ -38,9 +38,7 @@ const Navbar = () => {
     { label: "Blog Single", icon: <FaFileAlt />, href: "/blog-single" },
     { label: "Contact", icon: <MdOutlineContactPage />, href: "/contact" },
     { label: "Pricing", icon: <FaCogs />, href: "/pricing" },
-    { label: "Maintenance", icon: <FaCogs />, href: "/maintenance" },
     { label: "Coming Soon", icon: <FaCogs />, href: "/coming-soon" },
-    { label: "Components", icon: <FaCogs />, href: "/components" },
     { label: "Sign In", icon: <FaSignInAlt />, href: "/sign-in" },
     { label: "Sign Up", icon: <FaUserPlus />, href: "/sign-up" },
   ];
@@ -140,8 +138,8 @@ const Navbar = () => {
           </Menu>
 
           {/* Icons */}
-          <FaEnvelope className="text-xl cursor-pointer" title="Messages" />
-          <FaBell className="text-xl cursor-pointer" title="Notifications" />
+         <a href="/messages"><FaEnvelope className="text-xl cursor-pointer" title="Messages" /></a> 
+         <a href="/notification"><FaBell className="text-xl cursor-pointer" title="Notifications" /></a> 
 
           {/* Profile Image */}
           <div className="w-8 h-8 rounded-full bg-gray-600 cursor-pointer">

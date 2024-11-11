@@ -9,7 +9,6 @@ import Contact from './Contact';
 import EditProfile from './EditProfile';
 import FAQ from './FAQ';
 import Job from './Job';
-import Maintence from './Maintence';
 import Messages from './Messages';
 import Notification from './Notification';
 import NotFound from './NotFound';
@@ -20,7 +19,6 @@ import Privacy from './Privacy';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 import ResetPassword from './ResetPassword';
-import ReviewsTab from './ReviewsTab';
 import Profile from './Profile';
 
 function AppRoutes() {
@@ -35,13 +33,12 @@ function AppRoutes() {
         <Route path="/notification" element={<Notification />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<SingleBlog />} />
-        <Route path="/reviews" element={<ReviewsTab />} />
+        <Route path="/reviews" element={<CompanyProfile />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/pricing" element={<Pricing />} />
-        <Route path="/maintence" element={<Maintence />} />
         <Route path="/coming-soon" element={<ComingSoon />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
