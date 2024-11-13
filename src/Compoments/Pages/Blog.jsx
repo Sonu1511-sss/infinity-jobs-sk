@@ -94,30 +94,29 @@ export default function BlogSection() {
       </div>
       <div className="mx-auto w-[78rem] px-4 mt-16  md:px-8">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {blogs.map((blog) => (
-            <div
-              key={blog.id}
-              onClick={() => navigate(`/blog/${blog.id}`)}
-              className="cursor-pointer flex flex-col overflow-hidden rounded-lg border border-gray-700 bg-gray-800 shadow-lg hover:shadow-xl transition-shadow"
-            >
-              <div className="relative block h-48 bg-gray-100 md:h-64">
-                <img src={blog.imgSrc} alt={blog.title} className="absolute inset-0 h-full w-full object-cover" />
-              </div>
-              <div className="flex flex-1 flex-col p-4 sm:p-6">
-                <h2 className="mb-2 text-lg font-semibold">
-                  {blog.title}
-                </h2>
-                <p className="mb-8 text-gray-400">{blog.description}</p>
-                <div className="mt-auto flex items-center gap-2">
-                  <img src={blog.authorImg} alt={blog.author} className="h-10 w-10 rounded-full" />
+        {blogs.map((blog) => (
+          <div key={blog.id} className="bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <img src={blog.imgSrc} alt={blog.title} className="w-full h-48 object-cover sm:h-60 md:h-40 lg:h-48" />
+            <div className="p-4">
+              <h2 className="text-lg sm:text-xl font-bold mb-2 text-gray-800 dark:text-gray-200">{blog.title}</h2>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{blog.description}</p>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center">
+                  <img src={blog.authorImg} alt={blog.author} className="w-8 h-8 rounded-full mr-2" />
                   <div>
-                    <span className="text-indigo-400">{blog.author}</span>
-                    <span className="block text-sm text-gray-500">{blog.date}</span>
+                    <p className="text-sm font-semibold text-gray-800 dark:text-gray-300">{blog.author}</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">{blog.date}</p>
                   </div>
                 </div>
+                <button 
+                  onClick={() => handleReadMore(blog.id)} 
+                  className="text-blue-600 dark:text-blue-400 font-medium hover:underline">
+                  Read More
+                </button>
               </div>
             </div>
-          ))}
+          </div>
+        ))}
         </div>
       </div>
     </div>

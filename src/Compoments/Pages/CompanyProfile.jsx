@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
-import GalleryCard from "./SubPages/GalleryCard";
-import JobCard from "./SubPages/JobCard";
-import OverView from "./SubPages/OverView"
-import JobPostCard from "./SubPages/JobPostCard";
-import CompanyCard from "./SubPages/CompanyCard";
+import GalleryCard from "../SubPages/GalleryCard";
+import JobCard from "../SubPages/JobCard";
+import OverView from "../SubPages/OverView"
+import JobPostCard from "../SubPages/JobPostCard";
+import CompanyCard from "../SubPages/CompanyCard";
 import { FaBell } from "react-icons/fa";
-import ProfileList from "./SubPages/ProfileList";
-import JobCard2 from "./SubPages/JobCard2";
-import AllJobs from "./SubPages/AllJobs";
+import ProfileList from "../SubPages/ProfileList";
+import JobCard2 from "../SubPages/JobCard2";
+import AllJobs from "../SubPages/AllJobs";
 
 const CompanyProfile = () => {
   const [activeTab, setActiveTab] = useState("overview");

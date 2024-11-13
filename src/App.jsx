@@ -1,7 +1,7 @@
 import React from 'react';
 import { Toaster } from 'react-hot-toast';
-import AppRoutes from './Compoments/AppRoutes';
-import Navbar from './Compoments/Navbar';
+import Navbar from './Compoments/Pages/Navbar';
+import AppRoutes from './AppRoutes';
 
 function App() {
   return (

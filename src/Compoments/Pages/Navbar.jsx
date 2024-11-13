@@ -143,7 +143,7 @@ const Navbar = () => {
 
           {/* Profile Image */}
           <div className="w-8 h-8 rounded-full bg-gray-600 cursor-pointer">
-            <a href="/profile">
+            <a href="/sign-in">
               <img
                 className="w-8 h-8 rounded-full"
                 src="https://media.licdn.com/dms/image/v2/D4D03AQEI2Q6g0iYJ6A/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1731205970568?e=1736985600&v=beta&t=iajxgOUHtsKGnwpNe1jQyzcHOv0gJMAEM1gBWS39Rxg"

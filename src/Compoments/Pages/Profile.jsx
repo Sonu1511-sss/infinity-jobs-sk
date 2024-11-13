@@ -1,13 +1,13 @@
 import React from 'react'
-import ProfileCard from './SubPages/ProfileCart'
-import SkillsCard from './SubPages/SkiilsCard'
-import JobCard from './SubPages/JobCard'
-import JobCard2 from './SubPages/JobCard2'
-import ProfileList from './SubPages/ProfileList'
-import JobListings from './SubPages/JobListings'
-import AboutYou from './SubPages/AboutYou'
-import Experence from './SubPages/Experence'
-import Education from './SubPages/Education'
+import ProfileCard from '../SubPages/ProfileCart'
+import SkillsCard from '../SubPages/SkiilsCard'
+import JobCard from '../SubPages/JobCard'
+import JobCard2 from '../SubPages/JobCard2'
+import ProfileList from '../SubPages/ProfileList'
+import JobListings from '../SubPages/JobListings'
+import AboutYou from '../SubPages/AboutYou'
+import Experence from '../SubPages/Experence'
+import Education from '../SubPages/Education'
 
 function Profile() {
   return (

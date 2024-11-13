@@ -5,8 +5,8 @@ import CountUp from 'react-countup';
 const ProfileCard = () => {
   return (
     <div className="bg-gray-800 mt-4 text-white p-6 rounded-lg shadow-md w-80 mx-auto">
-      <img src="https://media.licdn.com/dms/image/v2/D4D03AQEI2Q6g0iYJ6A/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1731205970568?e=1736985600&v=beta&t=iajxgOUHtsKGnwpNe1jQyzcHOv0gJMAEM1gBWS39Rxg" alt="Profile" className="rounded-full w-24 h-24 mx-auto" />
-      <h2 className="text-center mt-2 font-bold text-lg">Shubham Uprade</h2>
+   <a href="/edit-profile"><img src="https://media.licdn.com/dms/image/v2/D4D03AQEI2Q6g0iYJ6A/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1731205970568?e=1736985600&v=beta&t=iajxgOUHtsKGnwpNe1jQyzcHOv0gJMAEM1gBWS39Rxg" alt="Profile" className="rounded-full w-24 h-24 mx-auto" />
+   </a>        <h2 className="text-center mt-2 font-bold text-lg">Shubham Uprade</h2>
       <p className="text-center text-sm text-gray-300">UI/UX Designer</p>
 
       {/* Stats Section */}
@@ -39,7 +39,7 @@ const ProfileCard = () => {
       {/* Links */}
       <div className="mt-4 text-center">
         <a
-          href="/edit-profile"
+          href="/profile"
           className="inline-block bg-blue-600 hover:bg-blue-700 text-white py-1 px-4 rounded-full transition-all duration-300"
         >
           View My Profile

@@ -1,9 +1,9 @@
 import React from "react";
-import JobCard from "./SubPages/JobCard";
-import CompanyCard from "./SubPages/CompanyCard";
-import JobListings from "./SubPages/JobListings";
-import ProfileList from "./SubPages/ProfileList";
-import AllJobs from "./SubPages/AllJobs";
+import JobCard from "../SubPages/JobCard";
+import CompanyCard from "../SubPages/CompanyCard";
+import JobListings from "../SubPages/JobListings";
+import ProfileList from "../SubPages/ProfileList";
+import AllJobs from "../SubPages/AllJobs";
 
 function Job() {
   return (

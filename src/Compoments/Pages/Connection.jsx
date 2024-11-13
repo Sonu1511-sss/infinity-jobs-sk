@@ -1,9 +1,9 @@
 import React from "react";
-import Suggestions from "./SubPages/Suggestion";
-import ManageNetwork from "./SubPages/ManageNetwok";
-import ProfileCard from "./SubPages/ProfileCart";
-import JobCard from "./SubPages/JobCard";
-import JobCard3 from "./SubPages/JobCard3";
+import Suggestions from "../SubPages/Suggestion";
+import ManageNetwork from "../SubPages/ManageNetwok";
+import ProfileCard from "../SubPages/ProfileCart";
+import JobCard from "../SubPages/JobCard";
+import JobCard3 from "../SubPages/JobCard3";
 
 const Connection = () => {
   return (

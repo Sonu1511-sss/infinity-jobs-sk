@@ -5,7 +5,7 @@ function NotFound() {
   const navigate = useNavigate();
 
   const goBack = () => {
-    navigate(-1); // Navigate back to the previous page
+    navigate(-1); // Navigate back to the previous pages
   };
 
   const goToHelp = () => {

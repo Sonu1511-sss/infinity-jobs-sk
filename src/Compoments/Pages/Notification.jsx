@@ -1,8 +1,8 @@
 import React from 'react';
-import NotificationCard from './SubPages/NotificationCard';
-import CompanyCard from './SubPages/CompanyCard';
-import ProfileList from './SubPages/ProfileList';
-import JobCard2 from './SubPages/JobCard2';
+import NotificationCard from '../SubPages/NotificationCard';
+import CompanyCard from '../SubPages/CompanyCard';
+import ProfileList from '../SubPages/ProfileList';
+import JobCard2 from '../SubPages/JobCard2';
 import { FaBell } from 'react-icons/fa';
 import toast, { Toaster } from 'react-hot-toast';
 
