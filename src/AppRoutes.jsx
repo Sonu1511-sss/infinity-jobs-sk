@@ -20,7 +20,7 @@ import Pricing from './Compoments/Pages/Pricing';
 import ComingSoon from './Compoments/Pages/ComingSoon';
 import ResetPassword from './Compoments/Pages/ResetPassword';
 import ProtectedRoute from './Compoments/Pages/ProtectedRoutes';
-import Admin from './Compoments/Admin/admin';
+
 
 function AppRoutes() {
   const token = localStorage.getItem('token'); // Check if the user is logged in
@@ -53,7 +53,6 @@ function AppRoutes() {
       <Route path="/privacy" element={<ProtectedRoute><PrivacyPolicy /></ProtectedRoute>} />
       <Route path="/contact" element={<ProtectedRoute><ContactUs /></ProtectedRoute>} />
       <Route path="/pricing" element={<ProtectedRoute><Pricing/></ProtectedRoute>} />
-      <Route path="/admin" element={<ProtectedRoute><Admin/></ProtectedRoute>} />
       <Route path="/coming-soon" element={<ComingSoon />} />
 
       

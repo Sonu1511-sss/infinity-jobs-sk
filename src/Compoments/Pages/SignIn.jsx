@@ -24,7 +24,7 @@ const SignIn = ({ type }) => {
     e.preventDefault();
     try {
       // Axios POST request to sign in
-      const response = await axios.post('http://localhost:5000/api/auth/signIn', formData);
+      const response = await axios.post(`${window.local.origin}/api/auth/signIn`, formData);
       toast.success(response.data.message);
       
       // Save the token to localStorage or cookies
