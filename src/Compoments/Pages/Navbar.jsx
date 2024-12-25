@@ -139,7 +139,7 @@ const Navbar = () => {
 
           {/* Icons */}
          <a href="/messages"><FaEnvelope className="text-xl cursor-pointer" title="Messages" /></a> 
-         <a href="/notification"><FaBell className="text-xl cursor-pointer" title="Notifications" /></a> 
+         <a href="/notificatio"><FaBell className="text-xl cursor-pointer" title="Notifications" /></a> 
 
           {/* Profile Image */}
           <div className="w-8 h-8 rounded-full bg-gray-600 cursor-pointer">
